@@ -3,7 +3,7 @@ function Home() {
     return (
         <>
             <div className="bg-violet-700 flex justify-center">
-                <div className='container grid grid-cols-2 text-cyan-100 py-16'>
+                <div className='container grid grid-cols-1 lg:grid-cols-2 text-cyan-100 py-16'>
                     <div className="flex flex-col gap-6 items-start justify-center">
                         <h2 className='text-5xl font-bold'>
                             Olá! <br/> Bem-vindo ao meu Blog Dev!
@@ -21,11 +21,11 @@ function Home() {
                         </div>
                     </div>
 
-                    <div className="flex gap-8 justify-center">
+                    <div className="flex items-center justify-center lg:justify-end mt-10 lg:mt-0 px-4">
                         <img
                             src="src/assets/personagemhome.png"
                             alt="Imagem Página Home"
-                            className='w-2/3'
+                            className='max-w-xs sm:max-w-sm lg:max-w-md'
                         />
                     </div>
                 </div>
