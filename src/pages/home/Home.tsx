@@ -1,82 +1,31 @@
+
 function Home() {
     return (
         <>
-            <div
-                style={{
-                    backgroundColor: "#312e81", 
-                    display: "flex",
-                    justifyContent: "center"
-                }}
-            >
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr 1fr", 
-                        color: "white",
-                        width: "100%",
-                        maxWidth: "1280px", 
-                    }}
-                >
-                    <div
-                        style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "1rem", 
-                            alignItems: "center",
-                            justifyContent: "center",
-                            paddingTop: "1rem", 
-                            paddingBottom: "1rem"
-                        }}
-                    >
-                        <h2
-                            style={{
-                                fontSize: "3rem", 
-                                fontWeight: "bold"
-                            }}
-                        >
-                            Seja Bem Vinde!
+            <div className="bg-violet-700 flex justify-center">
+                <div className='container grid grid-cols-2 text-cyan-100 py-16'>
+                    <div className="flex flex-col gap-6 items-start justify-center">
+                        <h2 className='text-5xl font-bold'>
+                            Olá! <br/> Bem-vindo ao meu Blog Dev!
                         </h2>
-
-                        <p
-                            style={{
-                                fontSize: "1.25rem" 
-                            }}
-                        >
-                            Expresse aqui seus pensamentos e opiniões
+                        <p className='text-xl text-cyan-50'>
+                            Compartilhando minha jornada como dev, aprendizados e desafios pelo caminho 💻✨
                         </p>
 
-                        <div
-                            style={{
-                                display: "flex",
-                                justifyContent: "space-around",
-                                gap: "1rem"
-                            }}
-                        >
-                            <div
-                                style={{
-                                    borderRadius: "0.5rem",
-                                    color: "white",
-                                    border: "2px solid white",
-                                    padding: "0.5rem 1rem"
-                                }}
-                            >
+                        <div className="flex justify-around gap-4">
+                            <div className='rounded text-white font-bold
+                                            border-cyan-100 border-solid border-2 py-2 px-4'
+                                >
                                 Nova Postagem
                             </div>
                         </div>
                     </div>
 
-                    <div
-                        style={{
-                            display: "flex",
-                            justifyContent: "center"
-                        }}
-                    >
+                    <div className="flex gap-8 justify-center">
                         <img
-                            src="https://i.imgur.com/fyfri1v.png"
+                            src="src/assets/personagemhome.png"
                             alt="Imagem Página Home"
-                            style={{
-                                width: "66%"
-                            }}
+                            className='w-2/3'
                         />
                     </div>
                 </div>
