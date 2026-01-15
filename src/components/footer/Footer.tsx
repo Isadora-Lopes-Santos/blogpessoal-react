@@ -1,7 +1,4 @@
-import {
-  GithubLogoIcon,
-  LinkedinLogoIcon,
-} from "@phosphor-icons/react";
+import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 
 function Footer() {
   let data = new Date().getFullYear();
@@ -22,28 +19,11 @@ function Footer() {
           </p>
 
           <div className="flex gap-2">
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkedinLogoIcon
-                size={48}
-                weight="fill"
-                className="hover:text-blue-400 transition-colors"
-              />
+            <a href="https://www.linkedin.com/in/isadora-l/" target="_blank">
+              <LinkedinLogoIcon size={48} weight="fill" className="hover:text-blue-400 transition-colors" />
             </a>
-
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GithubLogoIcon
-                size={48}
-                weight="fill"
-                className="hover:text-gray-400 transition-colors"
-              />
+            <a href="https://github.com/Isadora-Lopes-Santos" target="_blank">
+              <GithubLogoIcon size={48} weight="fill" className="hover:text-gray-400 transition-colors" />
             </a>
           </div>
         </div>
