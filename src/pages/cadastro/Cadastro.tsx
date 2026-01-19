@@ -6,11 +6,11 @@ import { cadastrarUsuario } from "../../services/Service"
 
 function Cadastro() {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate() // hook de navegação -> "teletransporte de telas"
   
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false) // estado de carregamento
 
-  const[confirmarSenha, setConfirmarSenha] = useState<string>("")
+  const[confirmarSenha, setConfirmarSenha] = useState<string>("") // estado para confirmar a senha
 
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
@@ -18,43 +18,44 @@ function Cadastro() {
     usuario: '',
     senha: '',
     foto: ''
-  })
+  }) // estado do usuário a ser cadastrado -> campos obrigatórios (tiradas de Usuario.ts)
   
   useEffect(() => {
     if (usuario.id !== 0){
       retornar()
     }
-  }, [usuario])
+  }, [usuario]) // monitora o estado do usuário para redirecionar após cadastro
 
   function retornar(){
     navigate('/')
-  }
+  } // função para retornar à tela de login
 
-  function atualizarEstado(e: ChangeEvent<HTMLInputElement>){
+  function atualizarEstado(e: ChangeEvent<HTMLInputElement>){ // ChangeEvent -> evento de mudança em input (quando digita algo no campo). <HTMLInputElement> -> tipo do elemento que disparou o evento 
     setUsuario({
-      ...usuario,
-      [e.target.name]: e.target.value
+      ...usuario, // conecta com os outros campos do usuário inalterados
+      [e.target.name]: e.target.value // atualiza o estado do usuário com o valor do campo que disparou o evento. Target (alvo do evento) -> name (nome do campo) e value (valor digitado)
     })
 
-  }
+  } // função para atualizar o estado do usuário conforme o preenchimento do formulário
 
   function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>){
     setConfirmarSenha(e.target.value)
-  }
+  } // função para atualizar o estado de confirmação de senha
 
   async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>){
-    e.preventDefault()
+    e.preventDefault() // previne o comportamento padrão do formulário (recarregar a página)
 
     if(confirmarSenha === usuario.senha && usuario.senha.length >= 8){
 
-      setIsLoading(true)
+      setIsLoading(true) // ta carregando?(tá 👍)
 
       try{
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
         alert('Usuário cadastrado com sucesso!')
       }catch(error){
-        alert('Erro ao cadastrar o usuário!')
+        alert('Erro ao cadastrar o usuário! Verifique as informações fornecidas.')
       }
+
     }else{
       alert('Dados do usuário inconsistentes! Verifique as informações do cadastro.')
       setUsuario({...usuario, senha: ''})
@@ -62,7 +63,7 @@ function Cadastro() {
     }
 
     setIsLoading(false)
-  }
+  } // função para cadastrar o novo usuário ao submeter o formulário. Valida a senha e confirmação antes de enviar.
 
   return (
     <>
@@ -154,7 +155,7 @@ function Cadastro() {
                   <ClipLoader 
                     color="#ffffff" 
                     size={20} 
-                  /> :
+                  /> : // SE não estiver carregando(falso), mostra o texto, SENÃO(true) mostra o loader -> (um if else simplificado)
                 <span>Cadastrar</span>
                 }
             </button>

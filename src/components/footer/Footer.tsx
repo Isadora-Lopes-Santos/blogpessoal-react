@@ -1,7 +1,7 @@
 import { GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 
 function Footer() {
-  let data = new Date().getFullYear();
+  let data = new Date().getFullYear(); // capturando o ano atual do sistema
 
   return (
     <>

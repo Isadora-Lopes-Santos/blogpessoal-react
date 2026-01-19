@@ -2,6 +2,14 @@ import { createContext, type ReactNode, useState } from "react"
 import type UsuarioLogin from "../models/UsuarioLogin"
 import { login } from "../services/Service"
 
+/*
+    * Contexto responsável por gerenciar a autenticação do usuário.
+    * Fornece funções para login e logout, além do estado de carregamento.
+    * Utiliza o React Context API para compartilhar dados de autenticação entre componentes.
+    * Inclui o AuthProvider que envolve a aplicação para fornecer o contexto de autenticação.
+    * Define os tipos para o contexto e as propriedades do provedor.
+*/ 
+
 interface AuthContextProps {
     usuario: UsuarioLogin
     handleLogout(): void

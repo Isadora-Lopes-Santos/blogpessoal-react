@@ -4,7 +4,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 function Navbar() {
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // hook de navegação -> "teletransporte de telas"
 
     const { handleLogout } = useContext(AuthContext)
 
@@ -33,8 +33,8 @@ function Navbar() {
 
                     <div className='flex gap-8 items-center text-cyan-200'>
                         Postagens {/* principal */}
-                        Temas
-                        Cadastrar tema
+                        <Link to='/temas' className='hover:underline'>Temas</Link>
+                        <Link to='/cadastrartema' className='hover:underline'>Cadastrar tema</Link>
                         Perfil {/* principal */}
                         <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
                     </div>
