@@ -15,7 +15,7 @@ interface AuthContextProps {
     handleLogout(): void
     handleLogin(usuario: UsuarioLogin): Promise<void>
     isLoading: boolean
-}
+} // define as propriedades e métodos disponíveis no contexto de autenticação
 
 interface AuthProviderProps {
     children: ReactNode
@@ -32,7 +32,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         senha: "",
         foto: "",
         token: ""
-    })
+    }) // Usado para armazenar os dados do usuário logado (autenticado)
 
     const [isLoading, setIsLoading] = useState(false)
 
@@ -45,7 +45,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
             alert("Os Dados do usuário estão inconsistentes!")
         }
         setIsLoading(false)
-    }
+    } // função para realizar o login do usuário
 
     function handleLogout() {
         setUsuario({
@@ -56,11 +56,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
             foto: "",
             token: ""
         })
-    }
+    } // função para realizar o logout do usuário
 
     return (
         <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading }}>
             {children}
         </AuthContext.Provider>
-    )
+    ) // Provedor do contexto de autenticação que envolve os componentes filhos
 }

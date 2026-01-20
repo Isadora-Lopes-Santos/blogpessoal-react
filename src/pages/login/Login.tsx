@@ -12,34 +12,34 @@ function Login() {
 
     const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
         {} as UsuarioLogin
-    )
+    ) // estado para armazenar os dados de login do usuário (começa como um objeto vazio)
 
     useEffect(() => {
         if (usuario.token !== "") {
             navigate('/home')
         }
-    }, [usuario])
+    }, [usuario]) // monitora o estado do usuário para redirecionar se já estiver logado
 
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
         setUsuarioLogin({
             ...usuarioLogin,
             [e.target.name]: e.target.value
-        })
+        }) // função para atualizar o estado de login conforme o preenchimento do formulário
     }
 
     function login(e: FormEvent<HTMLFormElement>) {
         e.preventDefault()
         handleLogin(usuarioLogin)
-    }
+    } // função para realizar o login ao submeter o formulário
 
     return (
         <>
-            <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
+            <div className="bg-indigo-500 grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
                 <form className="flex justify-center items-center flex-col w-1/2 gap-4" 
                     onSubmit={login} >
-                    <h2 className="text-slate-900 text-5xl ">Entrar</h2>
+                    <h2 className="text-cyan-100 text-5xl">Entrar</h2>
 
-                    <div className="flex flex-col w-full">
+                    <div className="text-cyan-100 flex flex-col w-full">
                         <label htmlFor="usuario">Usuário</label>
                         <input
                             type="text"
@@ -48,10 +48,10 @@ function Login() {
                             placeholder="Usuario"
                             className="border-2 border-slate-700 rounded p-2"
                             value={usuarioLogin.usuario}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} // Atualiza o estado de login conforme o preenchimento do formulário
                         />
                     </div>
-                    <div className="flex flex-col w-full">
+                    <div className="text-cyan-100 flex flex-col w-full">
                         <label htmlFor="senha">Senha</label>
                         <input
                             type="password"
@@ -65,7 +65,7 @@ function Login() {
                     </div>
                     <button 
                         type='submit' 
-                        className="rounded bg-indigo-400 flex justify-center
+                        className="rounded bg-indigo-600 flex justify-center
                                    hover:bg-indigo-900 text-cyan-100 w-1/2 py-2">
                         { isLoading ? 
                             <ClipLoader 
@@ -76,16 +76,16 @@ function Login() {
                         }
                     </button>
 
-                    <hr className="border-slate-800 w-full" />
+                    <hr className="border-indigo-300 w-full" />
 
-                   <p>
+                   <p className="text-cyan-100">
                         Ainda não tem uma conta?{' '}
-                        <Link to="/cadastro" className="text-indigo-800 hover:underline">
+                        <Link to="/cadastro" className="text-indigo-950 hover:underline">
                             Cadastre-se
                         </Link>
                     </p>
                 </form>
-                 <div className="bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] lg:block hidden bg-no-repeat 
+                 <div className="bg-[url('src/assets/imagensDeFundo-login.png')] lg:block hidden bg-no-repeat
                             w-full min-h-screen bg-cover bg-center"
                 ></div>
             </div>

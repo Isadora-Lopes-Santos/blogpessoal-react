@@ -10,7 +10,7 @@ function Footer() {
           <p className="text-xl font-bold">
             Projeto de Blog Pessoal | Copyright: {data}
           </p>
-          <p className="text-lg text-center text-cyan-200">
+          <p className="text-lg text-cyan-200">
             Acesse minhas redes sociais
             <br />
             <span className="text-sm opacity-80 text-cyan-200">

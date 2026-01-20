@@ -13,7 +13,7 @@ function CardTema({ tema }: CardTemaProps) { // interface CardTemaProps: Atribui
 Em outras palavras, podemos extrair atributos específicos de um objeto ou valores específicos de um array e atribuí-los diretamente a variáveis. */
     return (
         <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-            <header className='py-2 px-6 bg-indigo-800 text-white font-bold text-2xl'>
+            <header className='py-2 px-6 bg-indigo-800 text-cyan-100 font-bold text-2xl'>
                 Tema
             </header>
             <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p> 
@@ -21,13 +21,13 @@ Em outras palavras, podemos extrair atributos específicos de um objeto ou valor
             
             <div className="flex">
                 <Link to={`/editartema/${tema.id}`}
-                    className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 
+                    className='w-full text-cyan-100 bg-indigo-400 hover:bg-indigo-800 
                     flex items-center justify-center py-2'>
                     <button>Editar</button>
                 </Link>
 
                 <Link to={`/deletartema/${tema.id}`}  
-                    className='text-slate-100 bg-red-400 hover:bg-red-700 w-full 
+                    className='text-cyan-100 bg-red-400 hover:bg-red-700 w-full 
                     flex items-center justify-center'>
                     <button>Deletar</button>
                 </Link> {/* links para editar e deletar tema -> permite a navegação para os componentes */}

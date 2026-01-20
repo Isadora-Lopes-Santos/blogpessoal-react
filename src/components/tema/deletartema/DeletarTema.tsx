@@ -13,8 +13,8 @@ function DeletarTema() {
 
     const [isLoading, setIsLoading] = useState<boolean>(false)
     
-    const { usuario, handleLogout } = useContext(AuthContext)
-    const token = usuario.token
+    const { usuario, handleLogout } = useContext(AuthContext) // useContext -> "estante" onde está armazenando dados e "()" é o dado especifico que quer pegar
+    const token = usuario.token // obtém o token de autenticação do contexto de autenticação
 
     const { id } = useParams<{ id: string }>() // obtém o parâmetro "id" da URL
 
@@ -24,11 +24,11 @@ function DeletarTema() {
                 headers: {
                     'Authorization': token
                 }
-            })
+            }) // função genérica para buscar dados do backend e atualizar o estado
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 handleLogout()
-            }
+            } // se o erro for 401 (não autorizado), faz logout
         }
     } // função para buscar o tema a ser deletado
 
@@ -63,7 +63,7 @@ function DeletarTema() {
             }else {
                 alert('Erro ao deletar o tema.')
             }
-        }
+        } // tenta deletar o tema e trata erros de autenticação
 
         setIsLoading(false)
         retornar()
@@ -74,37 +74,39 @@ function DeletarTema() {
     } // função para retornar à lista de temas
     
     return (
-        <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar tema</h1>
-            <p className='text-center font-semibold mb-4'>
-                Você tem certeza de que deseja apagar o tema a seguir?</p>
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header 
-                    className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
-                    Tema
-                </header>
-                <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p> 
-                {/* exibição da descrição do tema a ser deletado */}
-                <div className="flex">
-                    <button 
-                        className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
-                        onClick={retornar}>
-                        Não
-                    </button>
-                    <button 
-                        className='w-full text-slate-100 bg-indigo-400 
-                                   hover:bg-indigo-600 flex items-center justify-center'
-                                   onClick={deletarTema}>
+        <div className="bg-indigo-300 min-h-[80vh] w-full -mt-3">
+            <div className='container w-1/3 mx-auto'>
+                <h1 className='text-indigo-950 text-4xl text-center font-bold my-4'>Deletar tema</h1>
+                <p className='text-center text-indigo-900 font-semibold mb-4'>
+                    Você tem certeza de que deseja apagar o tema a seguir?</p>
+                <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
+                    <header 
+                        className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
+                        Tema
+                    </header>
+                    <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p> 
+                    {/* exibição da descrição do tema a ser deletado */}
+                    <div className="flex">
+                        <button 
+                            className='text-cyan-100 bg-red-400 hover:bg-red-600 w-full py-2'
+                            onClick={retornar}>
+                            Não
+                        </button>
+                        <button 
+                            className='w-full text-cyan-100 bg-indigo-400 
+                                    hover:bg-indigo-600 flex items-center justify-center'
+                                    onClick={deletarTema}>
 
-                        { isLoading ? 
-                            <ClipLoader 
-                                color="#ffffff" 
-                                size={24}
-                            /> : 
-                            <span>Sim</span>
-                        } {/* SE estiver carregando(true), mostra o loader, SENÃO(falso) mostra o texto -> (um if else simplificado) */}
+                            { isLoading ? 
+                                <ClipLoader 
+                                    color="#ffffff" 
+                                    size={24}
+                                /> : 
+                                <span>Sim</span>
+                            } {/* SE estiver carregando(true), mostra o loader, SENÃO(falso) mostra o texto -> (um if else simplificado) */}
 
-                    </button>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

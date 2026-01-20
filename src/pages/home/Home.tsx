@@ -2,9 +2,9 @@
 function Home() {
     return (
         <>
-            <div className="bg-violet-700 flex justify-center">
-                <div className='container grid grid-cols-1 lg:grid-cols-2 text-cyan-100 py-16'>
-                    <div className="flex flex-col gap-6 items-start justify-center">
+            <div className="bg-indigo-500 flex justify-center">
+                <div className='container grid grid-cols-2 text-cyan-100'>
+                    <div className="flex flex-col gap-4 items-start justify-center py-4">
                         <h2 className='text-5xl font-bold'>
                             Olá! <br/> Bem-vindo ao meu Blog Dev!
                         </h2>
