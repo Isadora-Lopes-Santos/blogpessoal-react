@@ -74,39 +74,37 @@ function DeletarTema() {
     } // função para retornar à lista de temas
     
     return (
-        <div className="bg-indigo-300 min-h-[80vh] w-full -mt-3">
-            <div className='container w-1/3 mx-auto'>
-                <h1 className='text-indigo-950 text-4xl text-center font-bold my-4'>Deletar tema</h1>
-                <p className='text-center text-indigo-900 font-semibold mb-4'>
-                    Você tem certeza de que deseja apagar o tema a seguir?</p>
-                <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                    <header 
-                        className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
-                        Tema
-                    </header>
-                    <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p> 
-                    {/* exibição da descrição do tema a ser deletado */}
-                    <div className="flex">
-                        <button 
-                            className='text-cyan-100 bg-red-400 hover:bg-red-600 w-full py-2'
-                            onClick={retornar}>
-                            Não
-                        </button>
-                        <button 
-                            className='w-full text-cyan-100 bg-indigo-400 
-                                    hover:bg-indigo-600 flex items-center justify-center'
-                                    onClick={deletarTema}>
+        <div className='container w-1/3 mx-auto'>
+            <h1 className='text-red-900 text-4xl text-center font-bold my-4'>Deletar tema</h1>
+            <p className='text-center text-indigo-950 font-semibold mb-4'>
+                Você tem certeza de que deseja apagar o tema a seguir?</p>
+            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
+                <header 
+                    className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
+                    Tema
+                </header>
+                <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p> 
+                {/* exibição da descrição do tema a ser deletado */}
+                <div className="flex">
+                    <button 
+                        className='text-cyan-100 bg-red-400 hover:bg-red-600 w-full py-2'
+                        onClick={retornar}>
+                         Não
+                    </button>
+                    <button 
+                        className='w-full text-cyan-100 bg-indigo-400 
+                                hover:bg-indigo-600 flex items-center justify-center'
+                                onClick={deletarTema}>
 
-                            { isLoading ? 
-                                <ClipLoader 
-                                    color="#ffffff" 
-                                    size={24}
-                                /> : 
-                                <span>Sim</span>
-                            } {/* SE estiver carregando(true), mostra o loader, SENÃO(falso) mostra o texto -> (um if else simplificado) */}
+                        { isLoading ? 
+                            <ClipLoader 
+                                color="#ffffff" 
+                                size={24}
+                            /> : 
+                            <span>Sim</span>
+                        } {/* SE estiver carregando(true), mostra o loader, SENÃO(falso) mostra o texto -> (um if else simplificado) */}
 
-                        </button>
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>

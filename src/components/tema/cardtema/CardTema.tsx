@@ -16,7 +16,7 @@ Em outras palavras, podemos extrair atributos específicos de um objeto ou valor
             <header className='py-2 px-6 bg-indigo-800 text-cyan-100 font-bold text-2xl'>
                 Tema
             </header>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p> 
+            <p className='p-8 text-3xl bg-slate-100 h-full'>{tema.descricao}</p> 
             {/* Como o atributo "descricao" é dinâmico —> cada renderização do Componente CardTema receberá um valor diferente, de acordo com o objeto tema recebido */}
             
             <div className="flex">

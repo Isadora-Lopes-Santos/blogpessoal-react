@@ -84,7 +84,7 @@ function Cadastro() {
               id="nome"
               name="nome"
               placeholder="Nome"
-              className="bg-slate-100 border-2 border-slate-700 rounded p-2"
+              className="bg-slate-100 border-2 border-slate-700 rounded p-2 text-cyan-900"
               value= {usuario.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} // e (evento): ChangeEvent -> evento de mudança no input. <HTMLInputElement> -> tipo do elemento que está sendo alterado => Atualiza o estado do usuário ao digitar no input.
             />
@@ -96,7 +96,7 @@ function Cadastro() {
               id="usuario"
               name="usuario"
               placeholder="Usuario"
-              className="bg-slate-100 border-2 border-slate-700 rounded p-2"
+              className="bg-slate-100 border-2 border-slate-700 rounded p-2 text-cyan-900"
               value= {usuario.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} 
             />
@@ -108,7 +108,7 @@ function Cadastro() {
               id="foto"
               name="foto"
               placeholder="Foto"
-              className="bg-slate-100 border-2 border-slate-700 rounded p-2"
+              className="bg-slate-100 border-2 border-slate-700 rounded p-2 text-cyan-900"
               value= {usuario.foto}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -120,7 +120,7 @@ function Cadastro() {
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="bg-slate-100 border-2 border-slate-700 rounded p-2"
+              className="bg-slate-100 border-2 border-slate-700 rounded p-2 text-cyan-900"
               value= {usuario.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
@@ -132,7 +132,7 @@ function Cadastro() {
               id="confirmarSenha"
               name="confirmarSenha"
               placeholder="Confirmar Senha"
-              className="bg-slate-100 border-2 border-slate-700 rounded p-2"
+              className="bg-slate-100 border-2 border-slate-700 rounded p-2 text-cyan-900"
               value= {confirmarSenha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)} // Atualiza o estado de confirmação de senha ao digitar no input.
             />

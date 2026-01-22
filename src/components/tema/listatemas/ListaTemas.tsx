@@ -47,7 +47,7 @@ function ListaTemas() {
     // função para buscar a lista de temas do backend
 
     return (
-        <div className="bg-indigo-300 min-h-[80vh] w-full -mt-3">
+        <div className="flex flex-col">
 
             {isLoading && (
                 <div className="flex justify-center w-full py-8">

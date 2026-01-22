@@ -10,7 +10,7 @@ function Login() {
 
     const { usuario, handleLogin, isLoading } = useContext(AuthContext)
 
-    const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
+    const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>( // useState -> Responsável por interagir com a tela (ele q faz com q tudo q mudamos na tela seja visto)
         {} as UsuarioLogin
     ) // estado para armazenar os dados de login do usuário (começa como um objeto vazio)
 
@@ -46,7 +46,7 @@ function Login() {
                             id="usuario"
                             name="usuario"
                             placeholder="Usuario"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="bg-slate-100 border-2 border-slate-700 rounded p-2 text-cyan-900"
                             value={usuarioLogin.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} // Atualiza o estado de login conforme o preenchimento do formulário
                         />
@@ -58,7 +58,7 @@ function Login() {
                             id="senha"
                             name="senha"
                             placeholder="Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="bg-slate-100 border-2 border-slate-700 rounded p-2 text-cyan-900"
                             value={usuarioLogin.senha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />

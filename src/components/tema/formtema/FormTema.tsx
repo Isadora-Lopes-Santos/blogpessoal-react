@@ -91,41 +91,38 @@ function FormTema() {
     } // função para cadastrar ou atualizar o tema ao submeter o formulário
 
     return (
-        <div className="bg-indigo-300 min-h-[80vh]">
-            <div className="container flex flex-col items-center justify-center mx-auto">
-                <h1 className="text-4xl text-center my-8 font-bold text-indigo-950">
-                    {id === undefined ? 'Cadastrar Tema' : 'Editar Tema'}
-                </h1>
+        <div className="container flex flex-col items-center justify-center mx-auto">
+            <h1 className="text-4xl text-center my-8 font-bold text-indigo-950">
+                {id === undefined ? 'Cadastrar Tema' : 'Editar Tema'}
+            </h1>
 
-                <form className="w-1/2 flex flex-col gap-4" 
-                    onSubmit={gerarNovoTema} >
-                    <div className="text-indigo-900 font-semibold flex flex-col gap-2">
-                        <label htmlFor="descricao">Descrição do Tema</label>
-                        <input
-                            type="text"
-                            placeholder="Descreva aqui seu tema"
-                            name='descricao'
-                            className="bg-slate-100 border-2 border-slate-700 rounded p-2"
-                            value={tema.descricao}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} // e (evento): ChangeEvent -> evento de mudança no input. <HTMLInputElement> -> tipo do elemento que está sendo alterado => Atualiza o estado do tema ao digitar no input.
-                        />
-                    </div>
-                    <button
-                        className="rounded text-slate-100 bg-indigo-400 
-                                hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
-                        type="submit">
+            <form className="w-1/2 flex flex-col gap-4" 
+                onSubmit={gerarNovoTema} >
+                <div className="text-cyan-900 font-semibold flex flex-col gap-2">
+                    <label htmlFor="descricao">Descrição do Tema</label>
+                    <input
+                        type="text"
+                        placeholder="Descreva aqui seu tema"
+                        name='descricao'
+                        className="bg-slate-100 border-2 border-slate-700 rounded p-2"
+                        value={tema.descricao}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} // e (evento): ChangeEvent -> evento de mudança no input. <HTMLInputElement> -> tipo do elemento que está sendo alterado => Atualiza o estado do tema ao digitar no input.
+                    />
+                </div>
+                <button
+                    className="rounded text-slate-100 bg-indigo-400 
+                            hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
+                    type="submit">
 
-                        { isLoading ? 
-                                <ClipLoader 
-                                    color="#ffffff" 
-                                    size={24}
-                                /> : 
-                            <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
-                        } {/* SE estiver carregando(true), mostra o loader, SENÃO(falso) mostra o texto -> (um if else simplificado) */}
-
-                    </button>
-                </form>
-            </div>
+                    { isLoading ? 
+                            <ClipLoader 
+                                color="#ffffff" 
+                                size={24}
+                            /> : 
+                        <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
+                    } {/* SE estiver carregando(true), mostra o loader, SENÃO(falso) mostra o texto -> (um if else simplificado) */}
+                </button>
+            </form>
         </div>
     );
 }
