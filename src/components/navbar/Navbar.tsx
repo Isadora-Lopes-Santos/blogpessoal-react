@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, type ReactNode } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/AuthContext";
 
@@ -6,7 +6,7 @@ function Navbar() {
 
     const navigate = useNavigate(); // hook de navegação -> "teletransporte de telas"
 
-    const { handleLogout } = useContext(AuthContext) // useContext -> "estante" onde está armazenando dados e "()" é o dado especifico que quer pegar
+    const { usuario, handleLogout } = useContext(AuthContext) // useContext -> "estante" onde está armazenando dados e "()" é o dado especifico que quer pegar
 
     function logout() {
 
@@ -14,10 +14,13 @@ function Navbar() {
         alert('O Usuário foi desconectado com sucesso!')
         navigate('/')
     }
+    
+    let component: ReactNode
 
-    return (
-        <>
-            <div className='w-full flex justify-center py-4
+    if (usuario.token !== "") {
+
+        component = (
+                <div className='w-full flex justify-center py-4
             			   bg-indigo-900 text-white'> {/* barra de navegação superior */}
             
                 <div className="container flex justify-between items-center text-lg mx-8">
@@ -35,11 +38,17 @@ function Navbar() {
                         <Link to='/postagens' className='font-semibold hover:underline'>Postagens</Link>
                         <Link to='/temas' className='hover:underline'>Temas</Link>
                         <Link to='/cadastrartema' className='hover:underline'>Cadastrar tema</Link>
-                        Perfil {/* principal */}
+                        <Link to='/perfil' className='font-semibold hover:underline'>Perfil</Link>
                         <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
                     </div>
                 </div>
             </div>
+        )
+    }
+
+    return (
+        <>
+            { component } {/* Renderiza a Navbar apenas se o usuário estiver logado */ }
         </>
     )
 }
