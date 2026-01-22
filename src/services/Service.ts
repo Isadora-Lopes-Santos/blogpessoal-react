@@ -1,13 +1,12 @@
 import axios from "axios";
-
 /*
     * Serviço responsável por fazer requisições à API do Blog Pessoal.
     * Contém funções assíncronas para cadastrar usuários e realizar login.
     * Utiliza a biblioteca axios para facilitar as requisições HTTP.
  */
 
-const api = axios.create({
-    baseURL: 'https://blogpessoal-bkkt.onrender.com'
+export const api = axios.create({
+    baseURL: import.meta.env.VITE_API_URL
 })
 
 export const cadastrarUsuario = async (url: string, dados: Object, setDados: Function) => {
