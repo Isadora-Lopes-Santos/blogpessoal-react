@@ -21,7 +21,7 @@ function Home() {
 
                     <div className="flex items-center justify-center lg:justify-end mt-10 lg:mt-0 px-4">
                         <img
-                            src="src/assets/personagemhome.png"
+                            src="https://ik.imagekit.io/isa237/PersonagemHome.png"
                             alt="Imagem Página Home"
                             className='max-w-xs sm:max-w-sm lg:max-w-md'
                         />

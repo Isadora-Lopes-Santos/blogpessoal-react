@@ -28,7 +28,7 @@ function Navbar() {
                     {/* Logo + nome do blog */}
                     <div className="flex items-center gap-1 text-cyan-100 font-bold text-xl">
                         <img
-                            src="src/assets/logoblog.png"
+                            src="https://ik.imagekit.io/isa237/logoblog.png"
                             alt="Logo do Blog"
                             className="w-20 h-20"
                         />
