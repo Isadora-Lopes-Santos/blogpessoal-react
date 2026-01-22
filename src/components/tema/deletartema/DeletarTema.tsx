@@ -75,7 +75,7 @@ function DeletarTema() {
     } // função para retornar à lista de temas
     
     return (
-        <div className='container w-1/3 mx-auto'>
+        <div className='flex flex-col container w-1/3 mx-auto'>
             <h1 className='text-red-900 text-4xl text-center font-bold my-4'>Deletar tema</h1>
             <p className='text-center text-indigo-950 font-semibold mb-4'>
                 Você tem certeza de que deseja apagar o tema a seguir?</p>

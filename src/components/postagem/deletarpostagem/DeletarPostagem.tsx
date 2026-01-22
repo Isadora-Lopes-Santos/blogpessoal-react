@@ -74,7 +74,7 @@ function DeletarPostagem() {
     }
     
     return (
-        <div className='container w-1/3 mx-auto'> {/* contêiner centralizado para o conteúdo */}
+        <div className='flex flex-col container w-1/3 mx-auto'> {/* contêiner centralizado para o conteúdo */}
             <h1 className='text-red-900 font-bold text-4xl text-center my-4'>Deletar Postagem</h1>
 
             <p className='text-indigo-950 text-center font-semibold mb-4'>
