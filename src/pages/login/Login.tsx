@@ -85,7 +85,7 @@ function Login() {
                         </Link>
                     </p>
                 </form>
-                 <div className="bg-[url('src/assets/imagensDeFundo-login.png')] lg:block hidden bg-no-repeat
+                 <div className="bg-[url('https://ik.imagekit.io/isa237/background-login.png')] lg:block hidden bg-no-repeat
                             w-full min-h-screen bg-cover bg-center"
                 ></div>
             </div>

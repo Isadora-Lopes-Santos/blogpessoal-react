@@ -71,7 +71,7 @@ function Cadastro() {
       <div className="bg-indigo-500 grid grid-cols-1 lg:grid-cols-2 h-screen 
             place-items-center font-bold">
         <div
-          className="bg-[url('src/assets/imagensDeFundo-cadastro.png')] lg:block hidden bg-no-repeat 
+          className="bg-[url('https://ik.imagekit.io/isa237/background-cadastro.png')] lg:block hidden bg-no-repeat 
                     w-full min-h-screen bg-cover bg-center"
         ></div>
         <form className='flex justify-center items-center flex-col w-2/3 gap-3' 
