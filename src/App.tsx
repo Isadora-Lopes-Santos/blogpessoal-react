@@ -12,14 +12,17 @@ import ListaPostagens from './components/postagem/listapostagens/ListaPostagens'
 import FormPostagem from './components/postagem/formpostagem/FormPostagem'
 import DeletarPostagem from './components/postagem/deletarpostagem/DeletarPostagem'
 import Perfil from './pages/perfil/Perfil'
+import { ToastContainer } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css'; // importando o css do react-toastify (Caso a Folha de Estilo - CSS ReactToastify.css não seja importada, os alerts não serão exibidos corretamente na tela.)
 
 function App() {
 	return (
 		<>
 			<AuthProvider>
+				<ToastContainer />
 				<BrowserRouter>
 					<Navbar />
-
 					<div className="bg-indigo-300 min-h-[80vh]">
 						<Routes>
 							<Route path="/" element={<Login />} />

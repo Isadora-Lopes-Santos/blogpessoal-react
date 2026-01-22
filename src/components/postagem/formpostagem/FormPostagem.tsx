@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import type Postagem from "../../../models/Postagem";
 import { ClipLoader } from "react-spinners";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormPostagem() {
     const navigate = useNavigate(); // hook de navegação -> "teletransporte de telas"
@@ -62,7 +63,7 @@ function FormPostagem() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado');
+            ToastAlerta("Você precisa estar logado!", 'info');
             navigate('/');
         }
     }, [token]) // verifica se o token está vazio (usuário não autenticado) e redireciona para a página de login se necessário
@@ -107,13 +108,13 @@ function FormPostagem() {
                     },
                 }); // chama a função de atualização (PUT) se estiver editando uma postagem existente
 
-                alert('Postagem atualizada com sucesso')
+                ToastAlerta("Postagem atualizada com sucesso!", 'sucesso')
 
             } catch (error: any) {
                 if (error.toString().includes('401')) {
                     handleLogout()
                 } else {
-                    alert('Erro ao atualizar a Postagem')
+                    ToastAlerta("Erro ao atualizar a Postagem!", 'erro')
                 }
             } // trata erros de autenticação e outros erros
 
@@ -125,13 +126,13 @@ function FormPostagem() {
                     },
                 }) // chama a função de cadastro (POST) se estiver criando uma nova postagem
 
-                alert('Postagem cadastrada com sucesso');
+                ToastAlerta("Postagem cadastrada com sucesso!", 'sucesso');
 
             } catch (error: any) {
                 if (error.toString().includes('401')) {
                     handleLogout()
                 } else {
-                    alert('Erro ao cadastrar a Postagem');
+                    ToastAlerta("Erro ao cadastrar a Postagem!", 'erro');
                 }
             } // trata erros de autenticação e outros erros
         }
